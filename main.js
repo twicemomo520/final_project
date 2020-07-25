@@ -1,5 +1,6 @@
 let express = require('express');
 let app = express();
+let port = process.env.port || 8888
 let user_router = require('./routers/main_router.js')
 
 app.get("/", (req, res) => {
@@ -8,6 +9,6 @@ app.get("/", (req, res) => {
 
 app.use("/user", user_router)
 
-app.listen(8888, () => {
+app.listen(port, () => {
     console.log("server listen on port 8888")
 });
