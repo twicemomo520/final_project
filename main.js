@@ -10,5 +10,5 @@ app.get("/", (req, res) => {
 app.use("/user", user_router)
 
 app.listen(port, () => {
-    console.log("server listen on port 8888")
+    console.log(`server listen on port ${port}`)
 });
