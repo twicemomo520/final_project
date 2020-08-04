@@ -8,13 +8,30 @@ router.use(function timeLog(req, res, next) {
 });
 // define the home page route
 
+
 router.get('/', function(req, res) {
-  res.send('Bob\'s home page');
+  res.send(
+    'Bob\'s home page'+'<br>'+
+    '<a href="/user/Bob/about"> about </a>'+'<br>'
+    );
 });
+
+
+
 
 // define the about route
 router.get('/about', function(req, res) {
-  res.send('About Bob');
+
+  let options = {
+    root: __dirname,
+    dotfiles: 'deny'
+  }
+
+  res.sendFile('Bob.html', options);
 });
 
 module.exports = router;
+
+
+
+
